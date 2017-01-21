@@ -57,6 +57,8 @@ public class Chord : MonoBehaviour
 		notes = _n;
 		direction = dir;
 		chooseNoteModel(_n);
+		transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+		transform.Rotate(new Vector3 (0, 0, 35));
 	}
 
 	private void chooseNoteModel(Notes[] _n)
@@ -88,8 +90,9 @@ public class Chord : MonoBehaviour
 		}
 		chooseNoteModel(notes);
 		direction = Direction.Left;
+		Debug.Log ("randomChord the Bullet is: " + notes[0] + " " + notes[1] + " " + notes[2]);
 	}
-
+		
 	/// <summary>
     /// Increase speed of the cord
     /// </summary>
