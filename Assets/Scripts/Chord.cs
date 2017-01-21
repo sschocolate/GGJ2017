@@ -15,7 +15,7 @@ public class Chord : MonoBehaviour
 	/// <summary>
     /// Speed at which the cord travels
     /// </summary>
-	private float speed = 10f;
+	private float speed = 5f;
 	/// <summary>
     /// Direction to shoot the cord. Right or left depending on shooter.
     /// </summary>
