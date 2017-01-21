@@ -15,7 +15,7 @@ public class Chord : MonoBehaviour
 	/// <summary>
     /// Speed at which the cord travels
     /// </summary>
-	private float speed = 5f;
+	private float speed = 2f;
 	/// <summary>
     /// Direction to shoot the cord. Right or left depending on shooter.
     /// </summary>
@@ -57,8 +57,7 @@ public class Chord : MonoBehaviour
 		notes = _n;
 		direction = dir;
 		chooseNoteModel(_n);
-		transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
-		transform.Rotate(new Vector3 (0, 0, 35));
+		transform.Rotate(new Vector3 (0, 0, 180));
 	}
 
 	private void chooseNoteModel(Notes[] _n)
@@ -96,14 +95,14 @@ public class Chord : MonoBehaviour
 	/// <summary>
     /// Increase speed of the cord
     /// </summary>
-	void increaseSpeed()
+	public void increaseSpeed()
 	{
 		speed = speed * 2;
 	}
 	/// <summary>
     /// Decrease speed of the cord
     /// </summary>
-	void decreaseSpeed()
+	public void decreaseSpeed()
 	{
 		speed = speed / 2;
 	}
@@ -116,12 +115,18 @@ public class Chord : MonoBehaviour
 		direction = dir;
 	}
 	/// <summary>
-    /// Load the model of the cord
+    /// Compare the notes in the other chord
     /// </summary>
-    /// <param name="size">Given size of the cord (1-3)</param>
-	public void loadModel(int size)
+    /// <param name="other">the other chord to compare</param>
+	public bool notesAreEqual(Chord other)
 	{
-		//Instantiate (models [size - 1], Transform.position);
+		for (int i = 0; i < 3; i++) {
+			if (notes [i] != other.notes [i]) {
+				Debug.Log (notes[i] + " Does NOT equal " + other.notes[i]);
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/// <summary>
@@ -132,6 +137,17 @@ public class Chord : MonoBehaviour
 		notes[0] = Notes.Empty;
 		notes[1] = Notes.Empty;
 		notes[2] = Notes.Empty;
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.name == "Note(Clone)") {
+			//Chord dank = other.gameObject.GetComponent<Chord> ();
+			Debug.Log("OnTriggeer");
+			if (this.notesAreEqual (other.gameObject.GetComponent<Chord> ())) {
+				Debug.Log ("NOTES EQUAL");
+				Destroy (gameObject);
+			}
+		}
 	}
 }
 
