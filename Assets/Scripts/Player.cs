@@ -24,27 +24,22 @@ public class Player : MonoBehaviour {
 		if (setNote <= 2) {
 			if (Input.GetKeyDown ("a")) {
 				input [setNote] = Notes.A;
-				Debug.Log (input [setNote]);
 				setNote++;
 			}
 			if (Input.GetKeyDown ("s")) {
 				input [setNote] = Notes.S;
-				Debug.Log (input [setNote]);
 				setNote++;
 			}
 			if (Input.GetKeyDown ("d")) {
 				input [setNote] = Notes.D;
-				Debug.Log (input [setNote]);
 				setNote++;
 			}
 			if (Input.GetKeyDown ("f")) {
 				input [setNote] = Notes.F;
-				Debug.Log (input [setNote]);
 				setNote++;
 			}
 			if (Input.GetKeyDown ("g")) {
 				input [setNote] = Notes.G;
-				Debug.Log (input [setNote]);
 				setNote++;
 			}
 		}
@@ -77,5 +72,6 @@ public class Player : MonoBehaviour {
 	void shoot(){
 		GameObject bullet = (GameObject)Instantiate(chordPrefab, chordSpawn.transform.position, new Quaternion());
 		bullet.GetComponent<Chord>().Initialize (input, Direction.Right);
+		bullet.GetComponent<Chord> ().increaseSpeed ();
 	}
 }
