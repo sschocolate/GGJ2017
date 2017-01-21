@@ -37,7 +37,8 @@ public class GameManagerScript : MonoBehaviour {
     // Spawn player at the default position
     void spawnPlayer() {
         Vector3 initSpawn = playerSpawns[0].transform.position;
-        Instantiate(PlayerPrefab, initSpawn, new Quaternion());
+		Quaternion rot = playerSpawns [0].transform.rotation;
+        Instantiate(PlayerPrefab, initSpawn, rot);
     }
 
     // Spawns enemy at specified location
@@ -47,7 +48,8 @@ public class GameManagerScript : MonoBehaviour {
         if (!enemyInPos[spawnChoice])
         {
             Vector3 spawnLocation = enemySpawns[spawnChoice].transform.position;
-            Instantiate(EnemyPrefab, spawnLocation, new Quaternion());
+			Quaternion rot = enemySpawns [spawnChoice].transform.rotation;
+			Instantiate(EnemyPrefab, spawnLocation, rot);
             setEnemySpawnOccupied(spawnChoice, true);
             return true;
         } else

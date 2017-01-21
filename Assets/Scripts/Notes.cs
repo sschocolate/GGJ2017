@@ -1,4 +1,4 @@
-﻿enum Notes{
+﻿public enum Notes{
 	A = 0,
 	S = 1,
 	D = 2,
@@ -7,7 +7,7 @@
 	Empty = 5
 };
 
-enum Direction{
+public enum Direction{
 	Right,
 	Left,
 	None
