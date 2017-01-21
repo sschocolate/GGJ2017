@@ -53,7 +53,8 @@ public class Player : MonoBehaviour {
 			while (setNote <= 2) {
 				input [setNote++] = Notes.Empty;
 			}
-			shoot ();
+			if(input[0] != Notes.Empty)
+				shoot ();
 			Debug.Log ("Chord Fired: " + input[0] + " " + input[1] + " " + input[2]);
 			setNote = 0;
 		}
