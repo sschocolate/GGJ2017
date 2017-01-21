@@ -26,6 +26,7 @@ public class Chord : MonoBehaviour {
 		notes[1] = second;
 		notes[2] = third;
 		direction = dir;
+		Debug.Log ("Initialize the Bullet is: " + notes[0] + " " + notes[1] + " " + notes[2]);
 	}
 
 	public void randomChord(int size){
@@ -37,6 +38,7 @@ public class Chord : MonoBehaviour {
 			}
 		}
 		direction = Direction.Left;
+		Debug.Log ("randomChord the Bullet is: " + notes[0] + " " + notes[1] + " " + notes[2]);
 	}
 
 	// Update is called once per frame
@@ -47,6 +49,7 @@ public class Chord : MonoBehaviour {
 		if(direction == Direction.Right){
 			transform.position += new Vector3 (speed * Time.deltaTime, 0, 0);
 		}
+		Debug.Log ("Update the Bullet is: " + notes[0] + " " + notes[1] + " " + notes[2]);
 	}
 
 	void increaseSpeed(){

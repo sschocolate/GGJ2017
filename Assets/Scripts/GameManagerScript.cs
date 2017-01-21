@@ -67,7 +67,7 @@ public class GameManagerScript : MonoBehaviour {
     void spawnCharacters(int numEnemies)
     {
         int enemyChoice = Random.Range(0, enemySpawns.Length);
-        spawnPlayer();
+        //spawnPlayer();
 
         for (int i = 0; i < numEnemies; i++)
         {
