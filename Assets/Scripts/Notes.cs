@@ -4,6 +4,11 @@
 	D = 2,
 	F = 3,
 	G = 4,
-	empty = 5
+	Empty = 5
 };
 
+enum Direction{
+	Right,
+	Left,
+	None
+};
