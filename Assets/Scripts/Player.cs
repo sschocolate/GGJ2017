@@ -7,7 +7,6 @@ public class Player : MonoBehaviour {
 	public GameObject chordSpawn, chordPrefab;
 	private int location =  0, setNote = 0;
 	private Notes[] input = new Notes[3];
-	private Chord bullet;
 
 	// Use this for initialization
 	void Start () {

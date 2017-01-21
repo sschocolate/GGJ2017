@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     /// <param name="size">Number to shoot</param>
 	void shoot(int size) 
 	{
-		GameObject bullet = (GameObject)Instantiate(chordPrefab, chordSpawn.transform.position, new Quaternion());
+		GameObject bullet = (GameObject)Instantiate(chordPrefab, chordSpawn.transform.position, Quaternion.Euler(0, 0, 90));
 		bullet.GetComponent<Chord>().randomChord (size);
 	}
 }
