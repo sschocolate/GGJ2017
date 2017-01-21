@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManagerScript : MonoBehaviour {
+public class GameManagerScript : MonoBehaviour 
+{
 
     public GameObject[] playerSpawns;
     public GameObject[] enemySpawns;
@@ -13,29 +14,34 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject EnemyPrefab;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
         enemyInPos = new bool[playerSpawns.Length];
         spawnCharacters(2);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 
 	}
 
     // Get the current player score
-    int getCurrentScore() {
+    int getCurrentScore() 
+    {
         return PlayerPrefs.GetInt("score");
     }
 
     // Add to the score a certain amount
-    void incrementScore(int increment) {
+    void incrementScore(int increment) 
+    {
         int score = getCurrentScore();
         PlayerPrefs.SetInt("score", score + increment);
     }
 
     // Spawn player at the default position
-    void spawnPlayer() {
+    void spawnPlayer() 
+    {
         Vector3 initSpawn = playerSpawns[0].transform.position;
 		Quaternion rot = playerSpawns [0].transform.rotation;
         Instantiate(PlayerPrefab, initSpawn, rot);

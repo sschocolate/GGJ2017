@@ -76,6 +76,6 @@ public class Player : MonoBehaviour {
 	//Shoot played chord
 	void shoot(){
 		GameObject bullet = (GameObject)Instantiate(chordPrefab, chordSpawn.transform.position, new Quaternion());
-		bullet.GetComponent<Chord>().Initialize (input[0], input[1], input[2], Direction.Right);
+		bullet.GetComponent<Chord>().Initialize (input, Direction.Right);
 	}
 }
