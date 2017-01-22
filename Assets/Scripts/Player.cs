@@ -8,6 +8,9 @@ public class Player : MonoBehaviour {
 	private int location =  0, setNote = 0;
 	private Notes[] input = new Notes[3];
 
+    private float fireDelay = 1f;
+    private bool fired = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -45,29 +48,47 @@ public class Player : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown ("space")) {
-			while (setNote <= 2) {
-				input [setNote++] = Notes.Empty;
-			}
+            if (!fired)
+            {
+                while (setNote <= 2)
+                {
+                    input[setNote++] = Notes.Empty;
+                }
 
-			if(input[0] != Notes.Empty)
-				shoot ();
-			
-			Debug.Log ("Chord Fired: " + input[0] + " " + input[1] + " " + input[2]);
-			setNote = 0;
-			input = new Notes[3];
+                if (input[0] != Notes.Empty)
+                {
+                    shoot();
+                    fired = true;
+                }
+
+                Debug.Log("Chord Fired: " + input[0] + " " + input[1] + " " + input[2]);
+                setNote = 0;
+                input = new Notes[3];
+            }
 		}
-			
+
+        if (fired)
+        {
+            fireDelay -= Time.deltaTime;
+            if(fireDelay <= 0)
+            {
+                fired = false;
+                fireDelay = 1f;
+            }
+        }
 	}
 
 	//Move player up
 	void moveUp(){
-		if(location > 0)
+        //fired = false;
+        if (location > 0)
 			transform.position = lanes [--location].transform.position;
 	}
 
 	//Move player down
 	void moveDown(){
-		if(location < lanes.Length - 1)
+        //fired = false;
+        if (location < lanes.Length - 1)
 			transform.position = lanes [++location].transform.position;
 	}
 
