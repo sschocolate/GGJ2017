@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/team/develop
 guid: ef4b1adbe044fd246a4736af67e01e9c
 folderAsset: yes
 timeCreated: 1485060268
+=======
+guid: 64ef8955230d54dde9a80569e1dd7bc6
+folderAsset: yes
+timeCreated: 1485049482
+>>>>>>> Alpha Build ready and willing (#26)
 licenseType: Free
 DefaultImporter:
   userData: 
