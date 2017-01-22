@@ -129,7 +129,7 @@ public class Chord : MonoBehaviour
 	private Notes[] createRandomNotes(int s)
 	{
 		Notes[] temp = new Notes[s];
-		for (int i = 0; i < 3; i++){
+		for (int i = 0; i < temp.Length; i++){
 			if (i >= s) {
 				temp [i] = Notes.Empty;
 			} else {
@@ -230,6 +230,10 @@ public class Chord : MonoBehaviour
 			Destroy (gameObject);
 		} 
 		else if (col.gameObject.tag == "Player")
+		{
+			Destroy (gameObject);
+		}
+		else if (col.gameObject.tag == "Finish")
 		{
 			Destroy (gameObject);
 		}
