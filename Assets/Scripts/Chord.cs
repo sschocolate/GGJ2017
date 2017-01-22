@@ -59,9 +59,32 @@ public class Chord : MonoBehaviour
 	public void Initialize (Notes[] _n, Direction dir)
 	{
 		notes = _n;
+		if (dir != Direction.None)
+		{
+			direction = dir;
+			chooseNoteModel(_n);
+			setTextBar(_n);
+		}
+	}
+
+	/// <summary>
+    /// Create a meshless chord with a set of notes.
+    /// </summary>
+    /// <param name="dir">Direction of array. Should be Direction.None</param>
+	/// <param name="s">Size of array</param>
+	public void Initialize (Direction dir, int s)
+	{
+		notes = createRandomNotes(s);
 		direction = dir;
-		chooseNoteModel(_n);
-		setTextBar(_n);
+	}
+
+	/// <summary>
+    /// Getter for notes array.
+    /// </summary>
+    /// <returns>Notes array 1-3</returns>
+	public Notes[] getNotes()
+	{
+		return notes;
 	}
 
 	/// <summary>
@@ -87,17 +110,29 @@ public class Chord : MonoBehaviour
     /// <param name="size"></param>
 	public void randomChord(int size)
 	{
-		for (int i = 0; i < 3; i++){
-			if (i >= size) {
-				notes [i] = Notes.Empty;
-			} else {
-				notes [i] = (Notes)Random.Range (0, 4);
-			}
-		}
+		notes = createRandomNotes(size);
 		chooseNoteModel(notes);
 		setTextBar(notes);
 		direction = Direction.Left;
 		inverseNote();
+	}
+
+	/// <summary>
+    /// Create a random array of notes of a set size.
+    /// </summary>
+    /// <param name="s">Size of array</param>
+    /// <returns>Array of notes</returns>
+	private Notes[] createRandomNotes(int s)
+	{
+		Notes[] temp = new Notes[s];
+		for (int i = 0; i < 3; i++){
+			if (i >= s) {
+				temp [i] = Notes.Empty;
+			} else {
+				temp [i] = (Notes)Random.Range (0, 4);
+			}
+		}
+		return temp;
 	}
 		
 	/// <summary>
@@ -174,14 +209,24 @@ public class Chord : MonoBehaviour
     /// Collision handling for the notes.
     /// </summary>
     /// <param name="other">Collider object</param>
-	void OnTriggerEnter(Collider other) 
+	void OnTriggerEnter(Collider col) 
 	{
-		if (other.gameObject.tag == "Note") 
+		if (col.gameObject.tag == "Note") 
 		{
-			if (this.notesAreEqual(other.gameObject.GetComponent<Chord>())) 
+			if (this.notesAreEqual(col.gameObject.GetComponent<Chord>())) 
 			{
 				Destroy (gameObject);
+			} else if (direction == Direction.Right) {
+				Destroy (gameObject);
 			}
+		} 
+		else if (col.gameObject.tag == "Enemy")
+		{
+			Destroy (gameObject);
+		} 
+		else if (col.gameObject.tag == "Player")
+		{
+			Destroy (gameObject);
 		}
 	}
 }
