@@ -19,4 +19,11 @@ public class MenuManagerScript : MonoBehaviour {
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void startGame()
+    {
+        PlayerPrefs.SetInt("level", 1);
+        PlayerPrefs.SetInt("score", 0);
+    }
+
 }

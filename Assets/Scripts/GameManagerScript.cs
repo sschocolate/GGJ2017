@@ -17,7 +17,20 @@ public class GameManagerScript : MonoBehaviour
 	void Start () 
     {
         enemyInPos = new bool[playerSpawns.Length];
-        spawnCharacters(2);
+
+        int currentLevel = PlayerPrefs.GetInt("level");
+        switch(currentLevel)
+        {
+            case 1:
+                spawnCharacters(1);
+                break;
+            case 2:
+                spawnCharacters(2);
+                break;
+            case 3:
+                spawnCharacters(3);
+                break;
+        }
 	}
 	
 	// Update is called once per frame
