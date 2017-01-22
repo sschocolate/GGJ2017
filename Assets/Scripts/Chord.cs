@@ -129,11 +129,7 @@ public class Chord : MonoBehaviour
 			if (i >= s) {
 				temp [i] = Notes.Empty;
 			} else {
-<<<<<<< refs/remotes/team/develop
 				temp [i] = (Notes)Random.Range (0, 5);
-=======
-				temp [i] = (Notes)Random.Range (0, 4);
->>>>>>> Alpha Build ready and willing (#26)
 			}
 		}
 		return temp;
