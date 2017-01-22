@@ -36,14 +36,13 @@ public class Enemy : MonoBehaviour
 
 	void Awake()
 	{
-		
-		setTarget();
+
 	}
 
 	// Use this for initialization
 	void Start () 
 	{
-
+        setTarget();
 	}
 
     // Update is called once per frame
