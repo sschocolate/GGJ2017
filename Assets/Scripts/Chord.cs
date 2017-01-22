@@ -14,6 +14,10 @@ public class Chord : MonoBehaviour
     /// </summary>
 	public Text buttonText;
 	/// <summary>
+    /// Guitar slide for wrong note.
+    /// </summary>
+	public AudioSource guitarSlide;
+	/// <summary>
     /// Notes of the cord. Can be 1-3
     /// </summary>
 	private Notes[] notes = new Notes[3];
@@ -125,7 +129,7 @@ public class Chord : MonoBehaviour
 	private Notes[] createRandomNotes(int s)
 	{
 		Notes[] temp = new Notes[s];
-		for (int i = 0; i < 3; i++){
+		for (int i = 0; i < temp.Length; i++){
 			if (i >= s) {
 				temp [i] = Notes.Empty;
 			} else {
@@ -163,14 +167,47 @@ public class Chord : MonoBehaviour
     /// <param name="other">the other chord to compare</param>
 	public bool notesAreEqual(Chord other)
 	{
-		if (notes.Length > other.notes.Length) return false;
-		for (int i = 0; i < notes.Length; i++) 
-		{
-			if (notes [i] != other.notes [i]) 
-			{
-				return false;
-			}
-		}
+        int thisNotEmpty = 0;
+        int otherNotEmpty = 0;
+        for(int i = 0; i < notes.Length; i++)
+        {
+            if(notes[i] != Notes.Empty)
+            {
+                thisNotEmpty++;
+            }
+        }
+        for(int i = 0; i < other.notes.Length; i++)
+        {
+            if(other.notes[i] != Notes.Empty)
+            {
+                otherNotEmpty++;
+            }
+        }
+
+        if(thisNotEmpty != otherNotEmpty)
+        {
+            return false;
+        }
+
+        if (notes.Length < other.notes.Length)
+        {
+            for (int i = 0; i < notes.Length; i++)
+            {
+                if (notes[i] != other.notes[i])
+                {
+                    return false;
+                }
+            }
+        } else
+        {
+            for (int i = 0; i < other.notes.Length; i++)
+            {
+                if (notes[i] != other.notes[i])
+                {
+                    return false;
+                }
+            }
+        }
 		return true;
 	}
 	/// <summary>
@@ -219,12 +256,17 @@ public class Chord : MonoBehaviour
 			} else if (direction == Direction.Right) {
 				Destroy (gameObject);
 			}
+			guitarSlide.Play();
 		} 
 		else if (col.gameObject.tag == "Enemy")
 		{
 			Destroy (gameObject);
 		} 
 		else if (col.gameObject.tag == "Player")
+		{
+			Destroy (gameObject);
+		}
+		else if (col.gameObject.tag == "Finish")
 		{
 			Destroy (gameObject);
 		}
