@@ -20,10 +20,19 @@ public class MenuManagerScript : MonoBehaviour {
         SceneManager.LoadScene(scene);
     }
 
+    public void changeScene(int s)
+    {
+        SceneManager.LoadScene(s);
+    }
+
     public void startGame()
     {
         PlayerPrefs.SetInt("level", 1);
         PlayerPrefs.SetInt("score", 0);
     }
 
+    public void exitGame()
+    {
+         Application.Quit();
+    }
 }

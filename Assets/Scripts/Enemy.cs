@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
 	void Awake()
 	{
-		shoot (enemyShotDifficulty);
+		
 		setTarget();
 	}
 
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         if (!fired)
         {
             setRandomTimerBetween(6f, 18f);
-            shoot(3);
+            shoot(enemyShotDifficulty);
             fired = true;
         }
         else
