@@ -182,7 +182,6 @@ public class Chord : MonoBehaviour
 		notes[1] = Notes.Empty;
 		notes[2] = Notes.Empty;
 	}
-
 	/// <summary>
     /// Sets the text bar with the notes of the object
     /// </summary>
