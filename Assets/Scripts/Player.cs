@@ -109,10 +109,10 @@ public class Player : MonoBehaviour {
             if (!fired)
             {
 				int noteSize = setNote;
-                while (setNote <= 2)
+                /*while (setNote <= 2)
                 {
                     input[setNote++] = Notes.Empty;
-                }
+                }*/
                 if (input[0] != Notes.Empty)
 				{
 					if (noteSize == 1) {
