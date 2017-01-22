@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
 			if (Input.GetKeyDown ("a")) 
 			{
 				input [setNote] = Notes.A;
-				audioSources [0].Play ();
+				audioSources [0].Play();
 				setNote++;
 			}
 			if (Input.GetKeyDown ("s")) 

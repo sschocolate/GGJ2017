@@ -1,7 +1,25 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> feature/level
+<<<<<<< refs/remotes/team/develop
 guid: 9db2ed75bc4723f439227ddc724155f9
 folderAsset: yes
 timeCreated: 1485063485
+=======
+guid: 9de2ccb37db124d6688aba3fe7a27493
+folderAsset: yes
+timeCreated: 1485063505
+>>>>>>> Alpha Build ready and willing (#26)
+<<<<<<< HEAD
+=======
+=======
+guid: 9de2ccb37db124d6688aba3fe7a27493
+folderAsset: yes
+timeCreated: 1485063505
+>>>>>>> macres
+>>>>>>> feature/level
 licenseType: Free
 DefaultImporter:
   userData: 
