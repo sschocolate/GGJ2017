@@ -7,7 +7,7 @@ public class MenuManagerScript : MonoBehaviour {
     void Awake()
     {
         if(SceneManager.GetActiveScene().name == "start_menu"
-        || SceneManager.GetActiveScene().name == "introduction"
+        || SceneManager.GetActiveScene().name == "instructions"
         || SceneManager.GetActiveScene().name == "credits"
         || SceneManager.GetActiveScene().name == "game_over")
         {
