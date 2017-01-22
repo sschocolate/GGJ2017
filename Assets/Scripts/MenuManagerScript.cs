@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManagerScript : MonoBehaviour {
+    void Awake()
+    {
+        if(SceneManager.GetActiveScene().name == "start_menu"
+        || SceneManager.GetActiveScene().name == "introduction"
+        || SceneManager.GetActiveScene().name == "credits")
+        {
+            this.GetComponent<AudioSource>().Play();
+        }
+    }
 
 	// Use this for initialization
 	void Start () {

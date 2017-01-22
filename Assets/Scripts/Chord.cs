@@ -14,6 +14,10 @@ public class Chord : MonoBehaviour
     /// </summary>
 	public Text buttonText;
 	/// <summary>
+    /// Guitar slide for wrong note.
+    /// </summary>
+	public AudioSource guitarSlide;
+	/// <summary>
     /// Notes of the cord. Can be 1-3
     /// </summary>
 	private Notes[] notes = new Notes[3];
@@ -129,11 +133,7 @@ public class Chord : MonoBehaviour
 			if (i >= s) {
 				temp [i] = Notes.Empty;
 			} else {
-<<<<<<< refs/remotes/team/develop
 				temp [i] = (Notes)Random.Range (0, 5);
-=======
-				temp [i] = (Notes)Random.Range (0, 4);
->>>>>>> Alpha Build ready and willing (#26)
 			}
 		}
 		return temp;
@@ -223,6 +223,7 @@ public class Chord : MonoBehaviour
 			} else if (direction == Direction.Right) {
 				Destroy (gameObject);
 			}
+			guitarSlide.Play();
 		} 
 		else if (col.gameObject.tag == "Enemy")
 		{
