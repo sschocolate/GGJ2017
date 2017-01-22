@@ -129,7 +129,7 @@ public class Chord : MonoBehaviour
 			if (i >= s) {
 				temp [i] = Notes.Empty;
 			} else {
-				temp [i] = (Notes)Random.Range (0, 4);
+				temp [i] = (Notes)Random.Range (0, 5);
 			}
 		}
 		return temp;
