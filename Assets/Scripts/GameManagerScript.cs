@@ -12,12 +12,12 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject PlayerPrefab;
     public GameObject EnemyPrefab;
+    public MenuManagerScript mms;
 
 	// Use this for initialization
 	void Start () 
     {
         enemyInPos = new bool[playerSpawns.Length];
-
         int currentLevel = PlayerPrefs.GetInt("level");
         switch(currentLevel)
         {
@@ -36,7 +36,7 @@ public class GameManagerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-
+        checkScene();
 	}
 
     // Get the current player score
@@ -95,5 +95,40 @@ public class GameManagerScript : MonoBehaviour
                 enemyChoice = Random.Range(0, enemySpawns.Length);
             }
         }
+    }
+
+    void checkScene()
+    {
+        if (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            mms.changeScene("game_over");
+        } 
+        else if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0) 
+        {
+            Debug.Log("dead enemies");
+            mms.changeScene(checkLevel());
+        }
+    }
+
+    string checkLevel()
+    {
+        string difficultyLevel = "";
+        switch(PlayerPrefs.GetInt("level")) 
+        {
+            case 1:
+                PlayerPrefs.SetInt("level", 2);
+                difficultyLevel = "main2";
+                Debug.Log("going to level2");
+                break;
+            case 2:
+                PlayerPrefs.SetInt("level", 3);
+                difficultyLevel = "main3";
+                Debug.Log("going to level3");
+                break;
+            default:
+                difficultyLevel = "game_over";
+                break;
+        }
+        return difficultyLevel;
     }
 }
