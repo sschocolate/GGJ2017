@@ -1,0 +1,81 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon R7 M265 (ID=0x6900)
+    Vendor:   ATI
+    VRAM:     2035 MB
+    Driver:   15.200.1045.0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.231 seconds
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Matthew\Desktop\GGJ2017\JamBattle_v1_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.076424 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 15cc -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.495259 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 464.
+Total: 0.320543 ms (FindLiveObjects: 0.042633 ms CreateObjectMapping: 0.023685 ms MarkObjects: 0.240012 ms  DeleteObjects: 0.013816 ms)
+
+dead enemies
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+going to level2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.707405 ms
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 467.
+Total: 0.451207 ms (FindLiveObjects: 0.046976 ms CreateObjectMapping: 0.029212 ms MarkObjects: 0.290936 ms  DeleteObjects: 0.083293 ms)
+
+dead enemies
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+going to level3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.650955 ms
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 467.
+Total: 0.399494 ms (FindLiveObjects: 0.035133 ms CreateObjectMapping: 0.024474 ms MarkObjects: 0.278698 ms  DeleteObjects: 0.060792 ms)
+
+dead enemies
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.651744 ms
+
+Unloading 166 unused Assets to reduce memory usage. Loaded Objects now: 269.
+Total: 0.857807 ms (FindLiveObjects: 0.040660 ms CreateObjectMapping: 0.037501 ms MarkObjects: 0.361597 ms  DeleteObjects: 0.416469 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.270724 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 303.
+Total: 0.956892 ms (FindLiveObjects: 0.069477 ms CreateObjectMapping: 0.065529 ms MarkObjects: 0.798989 ms  DeleteObjects: 0.021316 ms)
+
