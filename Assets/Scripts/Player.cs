@@ -36,6 +36,14 @@ public class Player : MonoBehaviour {
     /// Fired boolean for a current shot.
     /// </summary>
     private bool fired = false;
+	/// <summary>
+	/// Array of sound clips
+	/// </summary>
+	public AudioClip[] Clips;
+	/// <summary>
+	/// Array of audio sources used to play sound.
+	/// </summary>
+	private AudioSource[] audioSources;
 
 	void Awake()
 	{
@@ -45,7 +53,13 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
+		audioSources = new AudioSource[Clips.Length];
+		int i = 0;
+		while (i < Clips.Length){
+			audioSources[i] = gameObject.AddComponent<AudioSource>();
+			audioSources[i].clip = Clips[i];
+			i++;
+		}
 	}
 	
 	// Update is called once per frame
@@ -63,43 +77,58 @@ public class Player : MonoBehaviour {
 			if (Input.GetKeyDown ("a")) 
 			{
 				input [setNote] = Notes.A;
+				audioSources [0].Play ();
 				setNote++;
 			}
 			if (Input.GetKeyDown ("s")) 
 			{
 				input [setNote] = Notes.S;
+				audioSources [1].Play ();
 				setNote++;
 			}
 			if (Input.GetKeyDown ("d")) 
 			{
 				input [setNote] = Notes.D;
+				audioSources [2].Play ();
 				setNote++;
 			}
 			if (Input.GetKeyDown ("f")) 
 			{
 				input [setNote] = Notes.F;
+				audioSources [3].Play ();
 				setNote++;
 			}
 			if (Input.GetKeyDown ("g")) 
 			{
 				input [setNote] = Notes.G;
+				audioSources [4].Play ();
 				setNote++;
 			}
 		}
 		if (Input.GetKeyDown ("space")) {
             if (!fired)
             {
+				int noteSize = setNote;
                 while (setNote <= 2)
                 {
                     input[setNote++] = Notes.Empty;
                 }
                 if (input[0] != Notes.Empty)
-                {
+				{
+					if (noteSize == 1) {
+						audioSources [(int)input [0] + 5].Play ();
+					} else if (noteSize == 2) {
+						audioSources [Random.Range (10, 14)].Play ();
+					} else {
+						audioSources [Random.Range (14, 19)].Play ();
+					}
                     shoot();
+						
                     fired = true;
                 }
                 setNote = 0;
-                input = new Notes[3];clearArray(input);
+                input = new Notes[3];
+				clearArray(input);
 			}
 		}
         if (fired)
